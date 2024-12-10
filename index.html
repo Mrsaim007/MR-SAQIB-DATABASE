@@ -1,293 +1,218 @@
 <!DOCTYPE html>
- <html lang="en">
-<title>MR SAQIB | Check Sim Details & Id Pic</title>
-<meta charset="UTF-8">
-<link href="nadradatabase.png" rel="icon">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-win8.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="res/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<style>
-	body {font-family: "Lato", sans-serif; background-color: #636e72;}
-	.mySlides {display: none}
-
-	.color1{
-		background-color: #2d3436;
-		color: white;
-	}
-
-	.color2{
-		background-color: #b2bec3;
-	}
-
-	.color3{
-		background-color: #636e72;
-		color: white;
-	}
-	input::-webkit-outer-spin-button,
-	input::-webkit-inner-spin-button {
-		-webkit-appearance: none;
-		margin: 0;
-	}
-</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST Retailer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .package {
+            border-bottom: 2px solid #ddd;
+            padding: 15px 10px;
+            margin-bottom: 15px;
+        }
+        .package h2 {
+            font-size: 18px;
+            color: #333;
+            margin: 0 0 10px;
+        }
+        .package p {
+            margin: 5px 0;
+            color: #555;
+            line-height: 1.6;
+        }
+        .price {
+            font-size: 18px;
+            color: green;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .buy-now {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .buy-now:hover {
+            background-color: #0056b3;
+        }
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+        }
+        .modal-content {
+            background: #fff;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 10% auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .modal h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .modal input {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .modal button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cancel-btn {
+            background-color: #ccc;
+            color: #333;
+            margin-right: 10px;
+        }
+        .pay-btn {
+            background-color: #28a745;
+            color: #fff;
+        }
+    </style>
+</head>
 <body>
-	<!-- Navbar -->
-	<div class="w3-top">
-		<div class="w3-bar color1 w3-card">
-			<a href="application.php" class="w3-bar-item w3-button w3-padding-large w3-hover-red"><img src="search.png" height="43" width="50" /></a>
-			<a href="#" type="submit" name="logout" class="w3-padding-large w3-hover-red  w3-right"><i class="fa fa-plane fa-2x"></i></a>
-		</div>
-	</div>
-	<!-- Page content -->
-	<div class="w3-content color2" style="max-width:2000px;margin-top:65px">
-		<!-- Automatic Slideshow Images -->
-		<div class="mySlides w3-display-container w3-center">
-			<img src="wa.png" style="width:100%" height="90">
-		</div>
-             <div class="mySlides w3-display-container w3-center">
-			<img src="k/2nd.png" style="width:100%" height="90">
-</div>
-</div>
-    <p></p>
-
-	</div>
-    <div class="w3-row-padding w3-margin-bottom" style="text-align: center;">
-      <div class="w3-col s6 l2 w3-padding-16">
-        <a class="w3-button w3-block w3-aqua w3-round-large" href="https://pakdataga.com">Sim Details</a>
-      </div>
-      <div class="w3-col s6 l2 w3-padding-16">
-        <a class="w3-button w3-block w3-aqua w3-round-large" href="https://cnic.sims.pk/">CNIC BY RU STUDIO</a>
-      </div>
-      <div class="w3-col s6 l2 w3-padding-16">
-        <a class="w3-button w3-block w3-aqua w3-round-large" href="ll.php">Cnic Copy <img src="newflash2.gif"></a>
-      </div>
-       <div class="w3-col s6 l2 w3-padding-16">
-        <a class="w3-button w3-block w3-aqua w3-round-large" href="https://excise.gos.pk/vehicle/vehicle_search">Vehicle Details</a>
-      </div>
-      <div class="w3-col s6 l2 w3-padding-16">
-        <a class="w3-button w3-block w3-aqua w3-round-large" href="https://simdetails-2023.online/sim/app/login/index.php">Family Details</a>
-      </div>
-      <div class="w3-col s6 l2 w3-padding-16">
-        <a class="w3-button w3-block w3-aqua w3-round-large" href="https://mtmis.excise.punjab.gov.pk/">Vehicles Info</a>
-      </div>
-      <div class="w3-col s6 l2 w3-padding-16"> 
-        <a class="w3-button w3-block w3-aqua w3-round-large"  href="https://bill.pitc.com.pk/iescobill">Bill Check</a>
-        
-
-               </div>
-      <div class="w3-col s6 l2 w3-padding-16">
-        <a class="w3-button w3-block w3-aqua w3-round-large"  href="https://visa.nadra.gov.pk/verify/">Visa Details</a>
-      
+    <div class="container">
+        <!-- Package 1 -->
+        <div class="package">
+            <h2>1. Telenor 7 Day Offer</h2>
+            <p><strong>Validity:</strong> 7 Days</p>
+            <p><strong>Internet:</strong> 10 GB</p>
+            <p><strong>Telenor Minutes:</strong> 2500</p>
+            <p><strong>Other Network Minutes:</strong> 125</p>
+            <p><strong>SMS:</strong> 1500</p>
+            <p class="price">Rs 180</p>
+            <button class="buy-now" onclick="showModal('Telenor 7 Day Offer', 180)">BUY NOW</button>
         </div>
-      <div class="w3-col s6 l2 w3-padding-16">
-        <a class="w3-button w3-block w3-aqua w3-round-large"  href="//dlims.punjab.gov.pk/verify">License Details</a>  
+
+        <!-- Package 2 -->
+        <div class="package">
+            <h2>2. Telenor Monthly Mega Offer</h2>
+            <p><strong>Validity:</strong> 30 Days</p>
+            <p><strong>Internet:</strong> 50 GB</p>
+            <p><strong>Telenor Minutes:</strong> Unlimited</p>
+            <p><strong>Other Network Minutes:</strong> 500</p>
+            <p><strong>SMS:</strong> 5000</p>
+            <p class="price">Rs 600</p>
+            <button class="buy-now" onclick="showModal('Telenor Monthly Mega Offer', 600)">BUY NOW</button>
         </div>
-      <div class="w3-col s6 l2 w3-padding-16">
-        <a class="w3-button w3-block w3-aqua w3-round-large"  href="//cnic.sims.pk">Check Cnic Sims</a>
-      
-    		</div>
 
-    
-      <div class="w3-col s6 l2 w3-padding-16">
-        <a class="w3-button w3-block w3-aqua w3-round-large" href="https://simdetails-2023.online/sim">Fresh Data 2024<img src="newflash2.gif"></a>
-  </div>
-      <div class="w3-col s6 l2 w3-padding-16">
-    <a class="w3-button w3-block w3-aqua w3-round-large" href="https://imei.info">Imei info</a>
-     </div>
-      <div class="w3-col s6 l2 w3-padding-16">
-    <a class="w3-button w3-block w3-aqua w3-round-large" href="https://ding.com">Check Sim Network</a>
-    	
-     </div>
-      <div class="w3-col s6 l2 w3-padding-16">
-    <a class="w3-button w3-block w3-aqua w3-round-large" href="https://pcmag.speedtestcustom.com/">Test Net Speed</a>
-     
-</div>
-</div>
-  <center>
-		<a class="w3-button w3-border w3-red w3-round-large w3-section" href="https://simdetails-2023.online/sim/app/login/index.php">Paid Login | Unlock More Premium Features.</a>
-			<div class="fa fa-whhatsapp">
-  </div>
-		<a class="w3-button w3-border w3-pink" href="https://wa.me/+923429180702?text=SALAM+MR+SAQIB.JEE">CONTACT WITH ADMIN</a>
-			<div class="fa fa-whatsbapp">
-</center>
-<p></p>
-</div>
-<p>
-</p>
-</div>
+        <!-- Package 3 -->
+        <div class="package">
+            <h2>3. Telenor Daily Social Pack</h2>
+            <p><strong>Validity:</strong> 1 Day</p>
+            <p><strong>Internet:</strong> 2 GB (Social Apps)</p>
+            <p><strong>Minutes:</strong> 100 (Telenor)</p>
+            <p class="price">Rs 15</p>
+            <button class="buy-now" onclick="showModal('Telenor Daily Social Pack', 15)">BUY NOW</button>
+        </div>
 
+        <!-- Package 4 -->
+        <div class="package">
+            <h2>4. Telenor Weekly Internet Max</h2>
+            <p><strong>Validity:</strong> 7 Days</p>
+            <p><strong>Internet:</strong> 25 GB</p>
+            <p><strong>Minutes:</strong> 500 (Telenor)</p>
+            <p><strong>SMS:</strong> 1500</p>
+            <p class="price">Rs 250</p>
+            <button class="buy-now" onclick="showModal('Telenor Weekly Internet Max', 250)">BUY NOW</button>
+        </div>
 
-	 <!--Footer -->
-	<footer class="w3-container w3-padding-16 color1">
-		<div class="w3-col l8 w3-margin-bottom">
+        <!-- Package 5 -->
+        <div class="package">
+            <h2>5. Telenor 3 Day Combo</h2>
+            <p><strong>Validity:</strong> 3 Days</p>
+            <p><strong>Internet:</strong> 8 GB</p>
+            <p><strong>Minutes:</strong> 1000 (Telenor)</p>
+            <p><strong>SMS:</strong> 500</p>
+            <p class="price">Rs 100</p>
+            <button class="buy-now" onclick="showModal('Telenor 3 Day Combo', 100)">BUY NOW</button>
+        </div>
 
-    <ul class="w3-ul w3-border" >
-   </div>
-    <p></p>
-</div>
+        <!-- Package 6 -->
+        <div class="package">
+            <h2>6. Telenor Monthly Social Offer</h2>
+            <p><strong>Validity:</strong> 30 Days</p>
+            <p><strong>Internet:</strong> 20 GB (Social Apps)</p>
+            <p><strong>Minutes:</strong> 1500 (Telenor)</p>
+            <p><strong>SMS:</strong> 2000</p>
+            <p class="price">Rs 350</p>
+            <button class="buy-now" onclick="showModal('Telenor Monthly Social Offer', 350)">BUY NOW</button>
+        </div>
+    </div>
 
-</center>
-<img src="rat.png" width="100%">
-  </div>
-<p></p>
-</div>
-<p></p>
-<center>
- <h3 style="color:orange;">Like Our Application .?? </h3>
- <strong>Please Take a Time To Give Good Review on Playstore.</strong>
-</center>
-
-</div>
-<p></p>
-</div>
-<p></p>
-
-</div>
-<center>
-</body> 
-</div>
-			    
-        <fieldset class="sht ft-1">
-          <div class="form-group">
+    <!-- Modal -->
+    <div class="modal" id="buyModal">
+        <div class="modal-content">
+            <h3 id="modalTitle"></h3>
+            <p id="modalPrice"></p>
+            <input type="text" placeholder="Enter 11-digit number" id="phoneNumber">
             <div>
-              <center>
-     </div>
-<center>
-<!--foote_bottom_ul_amrc ends here-->
-<p class="text-center">Copyright @2023 <h2>Nadra Finder 2023</a></p>
-			</center>
-			<p></p>
-<center>
+                <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+                <button class="pay-btn" onclick="redirectToWhatsApp()">Pay Now</button>
+            </div>
         </div>
-		<a class="w3-button w3-block w3-teal" href="PrivacyPolicy.php">Privacy Policy</a>
-			<div class="fa fa-Privacypolicy"></div>
-  
-        </div>
-		<a class="w3-button w3-block w3-teal" href="disclaimer.php">Disclaimer</a>
-			<div class="fa fa-disclaimer">
-	<script>
-		$(document).ready(function() {
-			$('#example').DataTable( {
-				"scrollY":        "280px",
-				"scrollCollapse": true,
+    </div>
 
-				"paging":         false,
-				"columnDefs": [
-				{ className: "dt-body-center", "targets": [ 0 ] },
-				{ className: "dt-body-center", "targets": [ -1 ] },
-				{ className: "dt-body-center", "targets": [ -2 ] },
-				{ className: "dt-body-center", "targets": [ -3 ] },
-				{ className: "dt-body-center", "targets": [ -4 ] }
-				]
-			}
-			);
-		} );
+    <script>
+        let packageTitle = '';
+        let packagePrice = 0;
 
-// Automatic Slideshow - change image every 15 seconds
-var myIndex = 0;
-carousel();
+        function showModal(title, price) {
+            packageTitle = title;
+            packagePrice = price;
+            document.getElementById('modalTitle').textContent = `Offer Activation: ${title}`;
+            document.getElementById('modalPrice').textContent = `Price: Rs ${price}`;
+            document.getElementById('buyModal').style.display = 'block';
+        }
 
-function carousel() {
-	var i;
-	var x = document.getElementsByClassName("mySlides");
-	for (i = 0; i < x.length; i++) {
-		x[i].style.display = "none";  
-	}
-	myIndex++;
-	if (myIndex > x.length) {myIndex = 1}    
-		x[myIndex-1].style.display = "block";  
-	setTimeout(carousel, 4000);    
-}
+        function closeModal() {
+            document.getElementById('buyModal').style.display = 'none';
+        }
 
-
-var msg_set = "";
-const box = document.getElementById('messagebox');
-var err = document.getElementById('innermessage');
-if(msg_set == 1){
-	box.style.display = 'block';
-	box.className = "w3-panel w3-green";
-	err.innerHTML = "Coins has been added" ;
-	setTimeout(() => {
-		box.style.display = 'none';  
-	}, 2000);
-
-}else if (msg_set == 2){
-	box.style.display = 'block';
-	box.className = "w3-panel w3-red";
-	err.innerHTML = "User has been deleted" ;
-	setTimeout(() => {
-		box.style.display = 'none';  
-	}, 2000);
-}else{
-
-	box.style.display = 'none';
-
-}
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script type="text/javascript">
-	function search(){
-		$("#result").html('Please wait');
-		var apiurl = "res/search.php";
-		$.ajax({
-			type:"POST",
-			url:apiurl,
-			cache:false,
-			data:{
-				search:$("#search-input").val(),
-				type:$("#type-input").val(),
-				userid:$("#userid").val()
-			},
-			
-			success:function(data){
-				$("#result").html(data);
-                    $.ajax({
-                      type:"GET",
-                      url:"functions.php",
-                      cache:false,
-                      data:{
-                        userid:$("#userid").val(),
-                        coinsmin:"cutting",
-                        type:sresult
-            
-                      },
-                      success:function(data){
-                        var diamonds = data;
-                        $("#remaining-diamonds").html(diamonds);
-                      }
-                    });
-   
-			}
-			
-		});
-	}
-
-
-
-
-
-
-
-
-
-
-
-
+        function redirectToWhatsApp() {
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            if (!phoneNumber || phoneNumber.length !== 11) {
+                alert('Please enter a valid 11-digit phone number.');
+                return;
+            }
+            const encodedMessage = encodeURIComponent(
+                `I want to activate the "${packageTitle}" package for Rs ${packagePrice} on phone number ${phoneNumber}.`
+            );
+            const whatsappURL = `https://wa.me/923429180702?text=${encodedMessage}`;
+            window.location.href = whatsappURL;
+        }
+    </script>
 </body>
-</div>
-
-
-
-
-
-
-
-
-
 </html>
