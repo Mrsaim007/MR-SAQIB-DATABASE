@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ST Retailer</title>
+    <title>SAQIB HAHSMI STORE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
@@ -25,9 +25,6 @@
         }
         .header .title {
             font-size: 18px;
-        }
-        .header .status {
-            font-size: 14px;
         }
         .container {
             padding: 20px;
@@ -157,43 +154,31 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <i class="fas fa-arrow-left back-icon" onclick="showMainInterface()"></i>
-        <div class="title">ST Retailer</div>
-        <div class="status">8:26 PM | 1.9KB/s <i class="fas fa-battery-full"></i></div>
-    </div>
     <div class="container" id="main-content">
-        <div class="card">
-            <h2>1. Monthly Prime</h2>
-            <p>Validity 30 Days</p>
-            <p>MBs: 300 GBs</p>
-            <p>SMS: 20000</p>
-            <p>Onnet: Unlimited</p>
-            <p>Offnet: 1500</p>
-            <p>Validity: 30 Days.</p>
-            <p>International Mins: 50*</p>
-            <p>Free Panda Pro Subscription**</p>
-            <p>**After activation, send SMS to 6556 to receive Foodpanda voucher.</p>
-            <div class="price">Rs 1740</div>
-            <button class="buy-now" onclick="showModal('Monthly Prime', 1740)">BUY NOW</button>
+        <!-- Gift Offers Interface -->
+        <div class="balance-container">
+            <div class="balance">
+                Current Balance
+                <span>Rs. 1880.00</span>
+            </div>
         </div>
-        <div class="card">
-            <h2>3. Extreme Plus</h2>
-            <p>Validity 30 Days</p>
-            <p>Internet: 60 GBs</p>
-            <p>Onnet Mins: 10,000</p>
-            <p>Offnet Mins: 700</p>
-            <p>SMS: 7000</p>
-            <p>Validity: 30 Days</p>
-            <div class="price">Rs 1300</div>
-            <button class="buy-now" onclick="showModal('Extreme Plus', 1300)">BUY NOW</button>
-        </div>
-        <div class="card">
-            <h2>4. Monthly ProMax</h2>
-            <p>Validity 30 Days</p>
-            <p>MBs: 100 GBs</p>
-            <div class="price">Rs 1390</div>
-            <button class="buy-now" onclick="showModal('Monthly ProMax', 1390)">BUY NOW</button>
+        <div class="card-container">
+            <div class="card-small">
+                <img src="https://storage.googleapis.com/a1aa/image/uNULsmwNRvJKJ5FQaxDY8W9qOCJndhORkXN7QDhJx7R5xYeJA.jpg" alt="Special offers icon" width="40" height="40">
+                <p>Special offers</p>
+            </div>
+            <div class="card-small" onclick="showPackages()">
+                <img src="https://storage.googleapis.com/a1aa/image/idwdPfha4jwBIirEkVDn1IyvgzncMQo0J1aOkxg7zjrwjx8JA.jpg" alt="Gift offers icon" width="40" height="40">
+                <p>Gift Offers</p>
+            </div>
+            <div class="card-small">
+                <img src="https://storage.googleapis.com/a1aa/image/zE09jyk2IA55E5EjXAebCxoP9jV8UhyLa9GS2WlkYRRyjx8JA.jpg" alt="Balance share icon" width="40" height="40">
+                <p>Balance Share</p>
+            </div>
+            <div class="card-small">
+                <img src="https://storage.googleapis.com/a1aa/image/YLGXL36tj1afZyR2E8cTnzEwfqYuWmguIcUh5mSyAyAiHj5TA.jpg" alt="Buy balance icon" width="40" height="40">
+                <p>Buy Balance</p>
+            </div>
         </div>
     </div>
     <div class="modal" id="modal">
@@ -230,43 +215,89 @@
             }
         }
 
-        function showMainInterface() {
+        function showGiftOffers() {
+            document.body.innerHTML = `
+                <div class="container" id="main-content">
+                    <div class="balance-container">
+                        <div class="balance">
+                            Current Balance
+                            <span>Rs. 1880.00</span>
+                        </div>
+                    </div>
+                    <div class="card-container">
+                        <div class="card-small">
+                            <img src="https://storage.googleapis.com/a1aa/image/uNULsmwNRvJKJ5FQaxDY8W9qOCJndhORkXN7QDhJx7R5xYeJA.jpg" alt="Special offers icon" width="40" height="40">
+                            <p>Special offers</p>
+                        </div>
+                        <div class="card-small" onclick="showPackages()">
+                            <img src="https://storage.googleapis.com/a1aa/image/idwdPfha4jwBIirEkVDn1IyvgzncMQo0J1aOkxg7zjrwjx8JA.jpg" alt="Gift offers icon" width="40" height="40">
+                            <p>Gift Offers</p>
+                        </div>
+                        <div class="card-small">
+                            <img src="https://storage.googleapis.com/a1aa/image/zE09jyk2IA55E5EjXAebCxoP9jV8UhyLa9GS2WlkYRRyjx8JA.jpg" alt="Balance share icon" width="40" height="40">
+                            <p>Balance Share</p>
+                        </div>
+                        <div class="card-small">
+                            <img src="https://storage.googleapis.com/a1aa/image/YLGXL36tj1afZyR2E8cTnzEwfqYuWmguIcUh5mSyAyAiHj5TA.jpg" alt="Buy balance icon" width="40" height="40">
+                            <p>Buy Balance</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showPackages() {
             document.body.innerHTML = `
                 <div class="header">
-                    <i class="fas fa-bars menu-icon"></i>
-                    <div class="status">
-                        <span>2:00 PM | 13.9KB/s</span>
-                        <i class="fas fa-signal"></i>
-                        <i class="fas fa-wifi"></i>
-                        <i class="fas fa-battery-full"></i>
+                    <i class="fas fa-arrow-left back-icon" onclick="showGiftOffers()"></i>
+                    <div class="title">ST Retailer</div>
+                </div>
+                <div class="container" id="main-content">
+                    <div class="card">
+                        <h2>1. Monthly Prime</h2>
+                        <p>Validity 30 Days</p>
+                        <p>MBs: 300 GBs</p>
+                        <p>SMS: 20000</p>
+                        <p>Onnet: Unlimited</p>
+                        <p>Offnet: 1500</p>
+                        <p>Validity: 30 Days.</p>
+                        <p>International Mins: 50*</p>
+                        <p>Free Panda Pro Subscription**</p>
+                        <p>**After activation, send SMS to 6556 to receive Foodpanda voucher.</p>
+                        <div class="price">Rs 1740</div>
+                        <button class="buy-now" onclick="showModal('Monthly Prime', 1740)">BUY NOW</button>
+                    </div>
+                    <div class="card">
+                        <h2>3. Extreme Plus</h2>
+                        <p>Validity 30 Days</p>
+                        <p>Internet: 60 GBs</p>
+                        <p>Onnet Mins: 10,000</p>
+                        <p>Offnet Mins: 700</p>
+                        <p>SMS: 7000</p>
+                        <p>Validity: 30 Days</p>
+                        <div class="price">Rs 1300</div>
+                        <button class="buy-now" onclick="showModal('Extreme Plus', 1300)">BUY NOW</button>
+                    </div>
+                    <div class="card">
+                        <h2>4. Monthly ProMax</h2>
+                        <p>Validity 30 Days</p>
+                        <p>MBs: 100 GBs</p>
+                        <div class="price">Rs 1390</div>
+                        <button class="buy-now" onclick="showModal('Monthly ProMax', 1390)">BUY NOW</button>
                     </div>
                 </div>
-                <div class="balance-container">
-                    <div class="balance">
-                        Current Balance
-                        <span>Rs. 1880.00</span>
-                    </div>
-                </div>
-                <div class="card-container">
-                    <div class="card-small">
-                        <img src="https://storage.googleapis.com/a1aa/image/uNULsmwNRvJKJ5FQaxDY8W9qOCJndhORkXN7QDhJx7R5xYeJA.jpg" alt="Special offers icon" width="40" height="40">
-                        <p>Special offers</p>
-                    </div>
-                    <div class="card-small">
-                        <img src="https://storage.googleapis.com/a1aa/image/idwdPfha4jwBIirEkVDn1IyvgzncMQo0J1aOkxg7zjrwjx8JA.jpg" alt="Gift offers icon" width="40" height="40">
-                        <p>Gift Offers</p>
-                    </div>
-                    <div class="card-small">
-                        <img src="https://storage.googleapis.com/a1aa/image/zE09jyk2IA55E5EjXAebCxoP9jV8UhyLa9GS2WlkYRRyjx8JA.jpg" alt="Balance share icon" width="40" height="40">
-                        <p>Balance Share</p>
-                    </div>
-                    <div class="card-small">
-                        <img src="https://storage.googleapis.com/a1aa/image/YLGXL36tj1afZyR2E8cTnzEwfqYuWmguIcUh5mSyAyAiHj5TA.jpg" alt="Buy balance icon" width="40" height="40">
-                        <p>Buy Balance</p>
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <h3>Offer Activation <span id="offer-name" style="color: blue;"></span> - Rs <span id="offer-price"></span></h3>
+                        <input type="text" id="phone-number" placeholder="Enter 11-digit number">
+                        <div class="modal-buttons">
+                            <button class="cancel" onclick="closeModal()">CANCEL</button>
+                            <button class="pay-now" onclick="redirectToWhatsApp()">PAY NOW</button>
+                        </div>
                     </div>
                 </div>
             `;
         }
     </script>
 </body>
-    </html>
+</html>
