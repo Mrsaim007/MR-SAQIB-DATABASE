@@ -194,8 +194,7 @@
     <script>
         function showModal(offerName, offerPrice) {
             document.getElementById('offer-name').textContent = offerName;
-            document.getElementById('offer-price').textContent = offerPrice;
-            document.getElementById('modal').style.display = 'flex';
+            document.getElementById('offer-price').textContent = offerPrice;           document.getElementById('modal').style.display = 'flex';
         }
 
         function closeModal() {
@@ -206,14 +205,13 @@
             const phoneNumber = document.getElementById('phone-number').value;
             if (phoneNumber.length === 11) {
                 const offerName = document.getElementById('offer-name').textContent;
-                const offerPrice = document.getElementById('offer-price').textContent;
-                const message = `I want to activate the ${offerName} offer for Rs ${offerPrice}. My number is ${phoneNumber}.`;
+                const offerPrice = document.getElementById('offer-price').textContent;               const message = `I want to activate the ${offerName} offer for Rs ${offerPrice}. My number is ${phoneNumber}.`;
                 const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
                 window.location.href = whatsappUrl;
             } else {
                 alert('Please enter a valid 11-digit number.');
             }
-        }
+p       }
 
         function showGiftOffers() {
             document.body.innerHTML = `
@@ -221,7 +219,7 @@
                     <div class="balance-container">
                         <div class="balance">
                             Current User
-                            <span>Rs. 308.00</span>
+p                           <span>Rs. 308.00</span>
                         </div>
                     </div>
                     <div class="card-container">
@@ -254,19 +252,18 @@
                 </div>
                 <div class="container" id="main-content">
                     <div class="card">
-                        <h2>1. Monthly Prime</h2>
-                        <p>Validity 30 Days</p>
-                        <p>MBs: 300 GBs</p>
-                        <p>SMS: 20000</p>
-                        <p>Onnet: Unlimited</p>
-                        <p>Offnet: 1500</p>
-                        <p>Validity: 30 Days.</p>
-                        <p>International Mins: 50*</p>
-                        <p>Free Panda Pro Subscription**</p>
-                        <p>**After activation, send SMS to 6556 to receive Foodpanda voucher.</p>
-                        <div class="price">Rs 1740</div>
-                        <button class="buy-now" onclick="showModal('Monthly Prime', 1740)">BUY NOW</button>
-                    </div>
+            <h3>1. Weekly Special offer - 10GB</h3>
+        
+            <div class="details">
+                <p>Validity 7 Days</p>
+                <p>Internet: 10GBs</p>
+                <p>All Network Mins: 125</p>
+                <p>TELENOR mints: 2500</p>
+                <p>Sms   1500</p>
+                <p>Validity: 7 Days</p>
+                <div class="price">Rs 230</div>   
+         <a href="#" class="buy-now" onclick="showModal('Weekly Ultra - 10GB', 230)">BUY NOW</a>
+        </div>
                     <div class="card">
                         <h2>3. Extreme Plus</h2>
                         <p>Validity 30 Days</p>
@@ -408,7 +405,7 @@
                 <p>Resubscriptions is allowed</p>
                 <div class="price">Rs 240</div>
             </div>
-            <a href="#" class="buy-now" onclick="showModal('Social All in One', 210)">BUY NOW</a>
+            <a href="#" class="buy-now" onclick="showModal('Social All in One', 240)">BUY NOW</a>
         </div>
            <div class="card">
             <h3>24. Weekly Ultra - 8GB</h3>
@@ -419,8 +416,20 @@
                 <p>All Network Mins: 100</p>
                 <p>Validity: 7 Days</p>
                 <div class="price">Rs 280</div>   
-         <a href="#" class="buy-now" onclick="showModal('Weekly Ultra - 8GB', 235)">BUY NOW</a>
+         <a href="#" class="buy-now" onclick="showModal('Weekly Ultra - 8GB', 280)">BUY NOW</a>
         </div>
+        <div class="card">
+            <h3>24. Weekly Ultra - 8GB</h3>
+        
+            <div class="details">
+                <p>Validity 7 Days</p>
+                <p>Internet: 8GBs</p>
+                <p>All Network Mins: 100</p>
+                <p>Validity: 7 Days</p>
+                <div class="price">Rs 280</div>   
+         <a href="#" class="buy-now" onclick="showModal('Weekly Ultra - 8GB', 280)">BUY NOW</a>
+        </div>
+        
         
         
                 <div class="modal" id="modal">
