@@ -163,13 +163,13 @@
             </div>
         </div>
         <div class="card-container">
-            <div class="card-small">
+            <div class="card-small"onclick="showUFONE()">
                 <img src="https://storage.googleapis.com/a1aa/image/uNULsmwNRvJKJ5FQaxDY8W9qOCJndhORkXN7QDhJx7R5xYeJA.jpg" alt="Special offers icon" width="40" height="40">
-                <p>COMING SOON</p>
+                <p>UFONE</p>
             </div>
             <div class="card-small" onclick="showPackages()">
                 <img src="https://storage.googleapis.com/a1aa/image/idwdPfha4jwBIirEkVDn1IyvgzncMQo0J1aOkxg7zjrwjx8JA.jpg" alt="Gift offers icon" width="40" height="40">
-                <p>GIFT OFFERS</p>
+                <p>Telenor</p>
             </div>
             <div class="card-small">
                 <img src="https://storage.googleapis.com/a1aa/image/zE09jyk2IA55E5EjXAebCxoP9jV8UhyLa9GS2WlkYRRyjx8JA.jpg" alt="Balance share icon" width="40" height="40">
@@ -223,13 +223,13 @@ p                           <span>Rs. 308.00</span>
                         </div>
                     </div>
                     <div class="card-container">
-                        <div class="card-small">
+                        <div class="card-small" onclick="showUFONE()">
                             <img src="https://storage.googleapis.com/a1aa/image/uNULsmwNRvJKJ5FQaxDY8W9qOCJndhORkXN7QDhJx7R5xYeJA.jpg" alt="Special offers icon" width="40" height="40">
-                            <p>COMINGSOON</p>
+                            <p>UFONE</p>
                         </div>
                         <div class="card-small" onclick="showPackages()">
                             <img src="https://storage.googleapis.com/a1aa/image/idwdPfha4jwBIirEkVDn1IyvgzncMQo0J1aOkxg7zjrwjx8JA.jpg" alt="Gift offers icon" width="40" height="40">
-                            <p>Gift Offers</p>
+                            <p>Telenor</p>
                         </div>
                         <div class="card-small">
                             <img src="https://storage.googleapis.com/a1aa/image/zE09jyk2IA55E5EjXAebCxoP9jV8UhyLa9GS2WlkYRRyjx8JA.jpg" alt="Balance share icon" width="40" height="40">
@@ -244,6 +244,52 @@ p                           <span>Rs. 308.00</span>
             `;
         }
 
+  function showUFONE() {
+            document.body.innerHTML = `
+                <div class="header">
+                    <i class="fas fa-arrow-left back-icon" onclick="showGiftOffers()"></i>
+                    <div class="title">PAKAGES BY SAQIB</div>
+                </div>
+                <div class="container" id="main-content">
+                    <div class="card">
+            <h3>1. UPOWER ALL IN ONE - 10GB</h3>
+        
+            <div class="details">
+                <p>Validity 7 Days</p>
+                <p>Internet: 10GBs</p>
+                <p>All Network Mins: 100</p>
+                <p>UFONE mints: 2500</p>
+                <p>Sms 2500</p>
+                <p>Validity: 7 Days</p>
+                <div class="price">Rs 320</div>   
+         <a href="#" class="buy-now" onclick="showModal('Weekly Ultra - 10GB', 320)">BUY NOW</a>
+        </div>
+   </div>
+    <div class="card">
+            <h3>2. UPOWER  - 16GB</h3>
+        
+            <div class="details">
+                <p>Validity 7 Days</p>
+                <p>Internet: 16GBs Only</p>
+                <p>resources: 8gb(2am to 2pm) </p>
+                <div class="price">Rs 310</div>   
+         <a href="#" class="buy-now" onclick="showModal('UPOWER  - 16GB', 310)">BUY NOW</a>
+        </div>
+   </div>
+    
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <h3>Offer Activation <span id="offer-name" style="color: blue;"></span> - Rs <span id="offer-price"></span></h3>
+                        <input type="text" id="phone-number" placeholder="Enter 11-digit number">
+                        <div class="modal-buttons">
+                            <button class="cancel" onclick="closeModal()">CANCEL</button>
+                            <button class="pay-now" onclick="redirectToWhatsApp()">PAY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    
         function showPackages() {
             document.body.innerHTML = `
                 <div class="header">
@@ -329,23 +375,22 @@ p                           <span>Rs. 308.00</span>
         <p>Validity 30 Days</p>
     </div>
     <div class="price">Rs 870</div>
-    <a href="https://wa.me/?text=I%20am%20interested%20in%20the%20Ultra%20Plus-50GB%20package%20for%20Rs%20870." class="buy-now" target="_blank">BUY NOW</a>
-</div>
+  <a href="#" class="buy-now" onclick="showModal('Ultra Plus-50GB', 870)">BUY NOW</a>
+        </div>
    </div>
-   </div>
-        <div class="card">
-            <div class="title">6. 6 to 6 Offer</div>
-         >
-            <div class="validity">Validity 1 Day</div>
+          <div class="card">
+            <h3>6. 6 to 6 Offer</h3>
+        
+            <div class="details">
+               <div class="validity">Validity 1 Day</div>
             <p>Telenor brings you the best-in-class 4G with faster speed and a crazy amount of data to keep you going for hours.</p>
             <p>Validity 1 Day</p>
             <p>Internet 2000 MB (6AM - 6PM)</p>
             <p>Free Daily Gamebox Subscription</p>
                <div class="price">Rs 20</div>
-              <a href="#" class="buy-now" onclick="showModal('Internet 2000 MB (6AM - 6PM) Rs 20)">BUY NOW</a>
-        </div> 
-           </div>
-           </div>
+         <a href="#" class="buy-now" onclick="showModal('Internet 2000 MB (6AM - 6PM)', 20)">BUY NOW</a>
+        </div>
+   </div>
             
               <div class="card">
             <div class="details">
@@ -353,9 +398,10 @@ p                           <span>Rs. 308.00</span>
                 <p>Validity 30 Days</p>
                 <p>Telenor SMS: 10,000<br>WhatsApp/Facebook MBs: 1000<br>Validity 30 Days</p>
             </div>
-            <div class="price">Rs 60</div>
-<a href="#" class="buy-now" onclick="showModal('Monthly Messaging Bundle', Rs :70)">BUY NOW</a>
+            <div class="price">Rs 70</div>
+       <a href="#" class="buy-now" onclick="showModal('Monthly Messaging Bundle', 70)">BUY NOW</a>
         </div>
+          
            </div>
            
         
