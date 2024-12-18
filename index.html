@@ -206,7 +206,7 @@
             if (phoneNumber.length === 11) {
                 const offerName = document.getElementById('offer-name').textContent;
                 const offerPrice = document.getElementById('offer-price').textContent;               const message = `I want to activate the ${offerName} offer for Rs ${offerPrice}. My number is ${phoneNumber}.`;
-                const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+                const whatsappUrl = `https://wa.me/+923429180702?text=${encodeURIComponent(message)}`;
                 window.location.href = whatsappUrl;
             } else {
                 alert('Please enter a valid 11-digit number.');
