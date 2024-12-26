@@ -1,0 +1,797 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAQIB HAHSMI STORE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .back-icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .header .title {
+            font-size: 18px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .card h2 {
+            font-size: 18px;
+            margin: 0 0 10px;
+        }
+        .card p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .card .price {
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: right;
+        }
+        .card .buy-now {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+        }
+        .modal-content h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .modal-content .modal-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .modal-content .modal-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .modal-content .modal-buttons .cancel {
+            background-color: #ccc;
+        }
+        .modal-content .modal-buttons .pay-now {
+            background-color: #007bff;
+            color: white;
+        }
+        .balance-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .balance-container .balance {
+            background-color: #2ca06c;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 18px;
+        }
+        .balance-container .balance span {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card-small {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+        }
+        .card-small img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        .card-small p {
+            margin: 0;
+            font-size: 14px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-content">
+        <!-- Gift Offers Interface -->
+        <div class="balance-container">
+            <div class="balance">
+                سیــّــاہ گـــّۡــلاب کـــّۡــی مـــّۡــاننـــّۡــد ہـــّۡــوں میـــّۡــں 
+نـــّۡــا ہـــّۡــر کســـّۡــی کـــّۡــو میســـّۡــر اور نـــّۡــا ہـــّۡــر کســـّۡــی کـــّۡــو پسنـــّۡــد!
+
+                <span>ثـــــاقـــــــب | SAQIB</span>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card-small"onclick="showUfone2()">
+                <img src="https://i.ibb.co/52MJx2G/images-4.jpg" alt="Special offers icon" width="70" height="70">
+                <p>UFONE</p>
+            </div>
+            <div class="card-small" onclick="showTELENOR2()">
+                <img src="https://i.ibb.co/dMk559K/images-2.png" alt="Gift offers icon" width="40" height="40">
+                <p>Telenor</p>
+            </div>
+            <div class="card-small" onclick="showjazz2()">
+                <img src="https://i.ibb.co/JvNqfkW/download.jpg" alt="Balance share icon" width="40" height="40">
+                <p>JAZz</p>
+            </div>
+            <div class="card-small" onclick="showZong2()">
+                <img src="https://i.ibb.co/qBq7scY/images-2.png" alt="Buy balance icon" width="40" height="40">
+                <p>ZonG</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3>Offer Activation <span id="offer-name" style="color: blue;"></span> - Rs <span id="offer-price"></span></h3>
+            <input type="text" id="phone-number" placeholder="Enter 11-digit number">
+            <div class="modal-buttons">
+                <button class="cancel" onclick="closeModal()">CANCEL</button>
+                <button class="pay-now" onclick="redirectToWhatsApp()">PAY NOW</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showModal(offerName, offerPrice) {
+            document.getElementById('offer-name').textContent = offerName;
+            document.getElementById('offer-price').textContent = offerPrice;           document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function redirectToWhatsApp() {
+            const phoneNumber = document.getElementById('phone-number').value;
+            if (phoneNumber.length === 11) {
+                const offerName = document.getElementById('offer-name').textContent;
+                const offerPrice = document.getElementById('offer-price').textContent;               const message = `I want to activate the ${offerName} offer for Rs ${offerPrice}. My number is ${phoneNumber}.`;
+                const whatsappUrl = `https://wa.me/+923429180702?text=${encodeURIComponent(message)}`;
+                window.location.href = whatsappUrl;
+            } else {
+                alert('Please enter a valid 11-digit number.');
+            }
+p       }
+
+        function showGiftOffers() {
+            document.body.innerHTML = `
+                <div class="container" id="main-content">
+                    <div class="balance-container">
+                        <div class="balance">
+                            سیــّــاہ گـــّۡــلاب کـــّۡــی مـــّۡــاننـــّۡــد ہـــّۡــوں میـــّۡــں 
+نـــّۡــا ہـــّۡــر کســـّۡــی کـــّۡــو میســـّۡــر اور نـــّۡــا ہـــّۡــر کســـّۡــی کـــّۡــو پسنـــّۡــد!
+
+                           <span>ثـــــاقـــــــب | SAQIB</span>
+                        </div>
+                    </div>
+                    <div class="card-container">
+                        <div class="card-small" onclick="showUfone2()">
+                            <img src="https://i.ibb.co/52MJx2G/images-4.jpg" alt="Special offers icon" width="60" height="60">
+                            <p>UFONE</p>
+                        </div>
+                        <div class="card-small" onclick="showTELENOR2()">
+                            <img src="https://i.ibb.co/dMk559K/images-2.png" alt="Gift offers icon" width="40" height="40">
+                            <p>Telenor</p>
+                        </div>
+                        <div class="card-small" onclick="showjazz2()">
+                            <img src="https://i.ibb.co/JvNqfkW/download.jpg" alt="Balance share icon" width="40" height="40">
+                            <p>JaZz</p>
+                        </div>
+                        <div class="card-small" onclick="showZong2()">
+                            <img src="https://i.ibb.co/qBq7scY/images-2.png" alt="Buy balance icon" width="40" height="40">
+                            <p>ZonG</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+function showUfone2() {
+            document.body.innerHTML = `
+    
+                <div class="container" id="main-content">
+    
+                    <i class="fas fa-arrow-left back-icon" onclick="showGiftOffers()"></i>
+                    <div class="balance-container">
+                        <div class="balance">
+                            All UFONE PAKAGES
+                           <span>👇👇👇👇</span>
+                        </div>
+                    </div>
+                    <div class="card-container">
+                        <div class="card-small" onclick="show3SLOT()">
+                            <img src="https://i.ibb.co/52MJx2G/images-4.jpg" alt="Special offers icon" width="40" height="40">
+                            <p>SOCIAL PKG</p>
+                        </div>
+                        <div class="card-small" onclick="show2SLOT()">
+                            <img src="https://i.ibb.co/52MJx2G/images-4.jpg" alt="Gift offers icon" width="40" height="40">
+                            <p>DATA PKG</p>
+                        </div>
+                        <div class="card-small" onclick="show1SLOT()">
+                            <img src="https://i.ibb.co/52MJx2G/images-4.jpg" alt="Balance share icon" width="40" height="40">
+                            <p>CALL PKG</p>
+                        </div>
+                        <div class="card-small" onclick="show4Slot()">
+                            <img src="https://i.ibb.co/52MJx2G/images-4.jpg" alt="Buy balance icon" width="40" height="40">
+                            <p>SPECIAL PKG</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+function showTELENOR2() {
+            document.body.innerHTML = `
+    
+                <div class="container" id="main-content">
+    
+                    <i class="fas fa-arrow-left back-icon" onclick="showGiftOffers()"></i>
+                    <div class="balance-container">
+                        <div class="balance">
+                            All TELENOR PAKAGES
+                           <span>👇👇👇👇</span>
+                        </div>
+                    </div>
+                    <div class="card-container">
+                        <div class="card-small" onclick="showTL1()">
+                            <img src="https://i.ibb.co/dMk559K/images-2.png" alt="Special offers icon" width="40" height="40">
+                            <p>SOCIAL PKG</p>
+                        </div>
+                        <div class="card-small" onclick="showTL2()">
+                            <img src="https://i.ibb.co/dMk559K/images-2.png" alt="Gift offers icon" width="40" height="40">
+                            <p>DATA PKG</p>
+                        </div>
+                        <div class="card-small" onclick="showTL3()">
+                            <img src="https://i.ibb.co/dMk559K/images-2.png" alt="Balance share icon" width="40" height="40">
+                            <p>CALL PKG</p>
+                        </div>
+                        <div class="card-small" onclick="showTL4()">
+                            <img src="https://i.ibb.co/dMk559K/images-2.png" alt="Buy balance icon" width="40" height="40">
+                            <p>SPECIAL Discount</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+function showjazz2() {
+            document.body.innerHTML = `
+    
+                <div class="container" id="main-content">
+    
+                    <i class="fas fa-arrow-left back-icon" onclick="showGiftOffers()"></i>
+                    <div class="balance-container">
+                        <div class="balance">
+                            All JAZZ PAKAGES PAKAGES
+                           <span>👇👇👇👇</span>
+                        </div>
+        </div>
+                    <div class="card-container">
+                        <div class="card-small" onclick="showTELE1()">
+                                          <img src="https://i.ibb.co/JvNqfkW/download.jpg" alt="Special offers icon" width="40" height="40">
+                            <p>SOCIAL PKG</p>
+                        </div>
+                        <div class="card-small" onclick="showTELE2()">
+                            <img src="https://i.ibb.co/JvNqfkW/download.jpg" alt="Gift offers icon" width="40" height="40">
+                            <p>DATA PKG</p>
+                        </div>
+                        <div class="card-small" onclick="show1SLOT()">
+                            <img src="https://i.ibb.co/JvNqfkW/download.jpg" alt="Balance share icon" width="40" height="40">
+                            <p>CALL PKG</p>
+                        </div>
+                        <div class="card-small" onclick="show4Slot()">
+                            <img src="https://i.ibb.co/JvNqfkW/download.jpg" alt="Buy balance icon" width="40" height="40">
+                            <p>SPECIAL PKG</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    function showZong2() {
+            document.body.innerHTML = `
+    
+                <div class="container" id="main-content">
+    
+                    <i class="fas fa-arrow-left back-icon" onclick="showGiftOffers()"></i>
+                    <div class="balance-container">
+                        <div class="balance">
+                            All ZONG PAKAGES
+                           <span>👇👇👇👇</span>
+                        </div>
+            </div>
+                    <div class="card-container">
+                        <div class="card-small" onclick="showZG1()">
+                            <img src="https://i.ibb.co/qBq7scY/images-2.png" alt="Special offers icon" width="40" height="40">
+                            <p>SOCIAL PKG</p>
+                        </div>
+                        <div class="card-small" onclick="showZG2()">
+                            <img src="https://i.ibb.co/qBq7scY/images-2.png" alt="Gift offers icon" width="40" height="40">
+                            <p>DATA PKG</p>
+                        </div>
+                        <div class="card-small" onclick="showZG3()">
+                            <img src="https://i.ibb.co/qBq7scY/images-2.png" alt="Balance share icon" width="40" height="40">
+                            <p>CALL PKG</p>
+                        </div>
+                        <div class="card-small" onclick="showZG4()">
+                            <img src="https://i.ibb.co/qBq7scY/images-2.png" alt="Buy balance icon" width="40" height="40">
+                            <p>SPECIAL Discount</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+  function show1SLOT() {
+            document.body.innerHTML = `
+                <div class="header">
+                    <i class="fas fa-arrow-left back-icon" onclick="showUfone2()"></i>
+                    <div class="title">PAKAGES BY SAQIB</div>
+                </div>
+      
+      </div>
+      <div class="section admins">
+            <h2>CALL PKGS</h2>
+                        <img class="profile-picture-2" src="https://i.ibb.co/qgkLTHT/images-3.png" alt="Profile Picture 2">
+            <ul>
+                </div>
+         <div class="card">
+      <h3>3. UFone to Ufone - 300</h3>
+        
+            <div class="details">
+                <p>UFONE mints: 300</p>
+                <p>Validity: 7 Days</p>
+                <div class="price">Rs 70</div>   
+         <a href="#" class="buy-now" onclick="showModal('No 3  Weakly - 300', 70)">BUY NOW</a>
+        </div>
+             </div>
+         <div class="card">
+      <h3>4. UFone to Ufone - 600</h3>
+        
+            <div class="details">
+                <p>UFONE mints: 600</p>
+                <p>Validity: 7 Days</p>
+                <div class="price">Rs 80</div>   
+         <a href="#" class="buy-now" onclick="showModal('No 4  Weakly - 600', 80)">BUY NOW</a>
+        </div>
+                 </div>
+         <div class="card">
+      <h3>5. UFone to Ufone - 1200</h3>
+        
+            <div class="details">
+                <p>UFONE mints: 1200</p>
+                <p>Validity: 7 Days</p>
+                <div class="price">Rs 100</div>   
+         <a href="#" class="buy-now" onclick="showModal('No 5  Weakly - 1200', 100)">BUY NOW</a>
+        </div>
+   </div>
+   </div>
+         <div class="card">
+      <h3>3. UFone to Ufone - 600</h3>
+        
+            <div class="details">
+                <p>UFONE mints: 600</p>
+                <p>Validity: 30 Days</p>
+                <div class="price">Rs 120</div>   
+         <a href="#" class="buy-now" onclick="showModal('Monthly - 600', 120)">BUY NOW</a>
+        </div>
+      </div>
+         <div class="card">
+      <h3>4. UFone to Ufone - 1200</h3>
+        
+            <div class="details">
+                <p>UFONE mints: 1200</p>
+                <p>Validity: 30 Days</p>
+                <div class="price">Rs 150</div>   
+         <a href="#" class="buy-now" onclick="showModal('Monthly - 1200', 150)">BUY NOW</a>
+        </div>
+      </div>
+         <div class="card">
+      <h3>5. UFone to Ufone - 2400</h3>
+        
+            <div class="details">
+                <p>UFONE mints: 2400</p>
+                <p>Validity: 30 Days</p>
+                <div class="price">Rs 200</div>   
+         <a href="#" class="buy-now" onclick="showModal('Monthly - 2400', 200)">BUY NOW</a>
+        </div>
+      </div>
+         <div class="card">
+      <h3>6. UFone & other - 600+100</h3>
+        
+            <div class="details">
+                <p>All Network Mins: 100</p>
+                <p>UFONE mints: 600</p>
+                <p>Validity: 30 Days</p>
+                <div class="price">Rs 260</div>   
+         <a href="#" class="buy-now" onclick="showModal('Monthly - 600+100', 260)">BUY NOW</a>
+        </div>
+         </div>
+      <div>
+         <div class="card">
+      <h3>7. UFone & other - 1200+100</h3>
+        
+            <div class="details">
+                <p>All Network Mins: 100</p>
+                <p>UFONE mints: 1200</p>
+                <p>Validity: 30 Days</p>
+                <div class="price">Rs 290</div>   
+         <a href="#" class="buy-now" onclick="showModal('No.7, Monthly - 1200+100', 290)">BUY NOW</a>
+        </div>
+         </div>
+       <div>
+         <div class="card">
+      <h3>8. UFone & other - 2400+100</h3>
+        
+            <div class="details">
+                <p>All Network Mins: 100</p>
+                <p>UFONE mints: 1200</p>
+                <p>Validity: 30 Days</p>
+                <div class="price">Rs 330</div>   
+         <a href="#" class="buy-now" onclick="showModal('No.8 Monthly - 2400+100', 330)">BUY NOW</a>
+        </div>
+      
+           <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <h3>Offer Activation <span id="offer-name" style="color: blue;"></span> - Rs <span id="offer-price"></span></h3>
+                        <input type="text" id="phone-number" placeholder="Enter 11-digit number">
+                        <div class="modal-buttons">
+                            <button class="cancel" onclick="closeModal()">CANCEL</button>
+                            <button class="pay-now" onclick="redirectToWhatsApp()">PAY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+      
+    function show2SLOT() {
+            document.body.innerHTML = `
+                <div class="header">
+                    <i class="fas fa-arrow-left back-icon" onclick="showUfone2()"></i>
+                    <div class="title">PAKAGES BY SAQIB</div>
+                </div>
+      
+                <div class="container" id="main-content">
+                    <div class="card">
+            <h3>1. UPOWER ALL IN ONE - 10GB</h3>
+        
+            <div class="details">
+                <p>Validity 7 Days</p>
+                <p>Internet: 10GBs</p>
+                <p>All Network Mins: 100</p>
+                <p>UFONE mints: 2500</p>
+                <p>Sms 2500</p>
+                <p>Validity: 7 Days</p>
+                <div class="price">Rs 320</div>   
+         <a href="#" class="buy-now" onclick="showModal('Weekly Ultra - 10GB', 320)">BUY NOW</a>
+        </div>
+   </div>
+    <div class="card">
+            <h3>2. UPOWER  - 16GB</h3>
+        
+            <div class="details">
+                <p>Validity 7 Days</p>
+                <p>Internet: 16GBs Only</p>
+                <p>resources: 8gb(2am to 2pm) </p>
+                <div class="price">Rs 310</div>   
+         <a href="#" class="buy-now" onclick="showModal('UPOWER  - 16GB', 310)">BUY NOW</a>
+        </div>
+      
+    
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <h3>Offer Activation <span id="offer-name" style="color: blue;"></span> - Rs <span id="offer-price"></span></h3>
+                        <input type="text" id="phone-number" placeholder="Enter 11-digit number">
+                        <div class="modal-buttons">
+                            <button class="cancel" onclick="closeModal()">CANCEL</button>
+                            <button class="pay-now" onclick="redirectToWhatsApp()">PAY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    
+    function show3SLOT() {
+            document.body.innerHTML = `
+                <div class="header">
+                    <i class="fas fa-arrow-left back-icon" onclick="showUfone2()"></i>
+                    <div class="title">PAKAGES BY SAQIB</div>
+                </div>
+          </div>
+    <div class="card">
+            <h3>1. MONTHLY WHATSAPP</h3>
+        
+            <div class="details">
+                <p>Validity 30 Days</p>
+                <p>Internet: 6 GBs Only</p>
+                
+                <div class="price">Rs 170</div>   
+         <a href="#" class="buy-now" onclick="showModal('Monthly whatsapp  - 6GB', 170)">BUY NOW</a>
+        </div>
+      
+             <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <h3>Offer Activation <span id="offer-name" style="color: blue;"></span> - Rs <span id="offer-price"></span></h3>
+                        <input type="text" id="phone-number" placeholder="Enter 11-digit number">
+                        <div class="modal-buttons">
+                            <button class="cancel" onclick="closeModal()">CANCEL</button>
+                            <button class="pay-now" onclick="redirectToWhatsApp()">PAY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    
+    function showTL1() {
+            document.body.innerHTML = `
+                <div class="header">
+                    <i class="fas fa-arrow-left back-icon" onclick="showTELENOR2()"></i>
+                    <div class="title">PAKAGES BY SAQIB</div>
+                </div>
+                <div class="container" id="main-content">
+                    </div>
+          <div class="card">
+            <div class="details">
+                <h3>1. My Telenor WhatsApp Offer</h3>
+                <p>Validity 30 Days</p>
+                <p>Overview<br>All prices are inclusive of Tax<br>Get 4 GB WhatsApp for 30 days and remain connected with your friends for whole month</p>
+            </div>
+            <div class="price">Rs 30</div>
+            <a href="#" class="buy-now" onclick="showModal('No.1Monthly whatsapp - 4GB', 30)">BUY NOW</a>
+        </div>
+      </div>
+  </div>
+          <div class="card">
+               <h3>2. Social All in One</h3>
+            
+            <div class="details">
+                <p>Validity 30 Days</p>
+                <p>Telenor Minutes: 250</p>
+                <p>Other Network Minutes: 25</p>
+                <p>Internet: 100 MBs</p>
+                <p>Facebook & WhatsApp: 8 GBs</p>
+                <p>Validity: 30 Days</p>
+                <p>Resubscriptions is allowed</p>
+                <div class="price">Rs 270</div>
+            </div>
+            <a href="#" class="buy-now" onclick="showModal('No.2,  Social All in One', 270)">BUY NOW</a>
+        </div>
+            </div>
+            </div>
+<div class="card">
+            <h3>3. Social All in One Plus</h3>
+            
+            <div class="details">
+                <p>Validity 30 Days</p>
+                <p>Internet MBs: 200 MBs</p>
+                <p>Facebook & WhatsApp: 15GBs</p>
+                <p>Telenor Minutes: 400</p>
+                <p>Other Network Minutes: 50</p>
+                <p>Validity: 30 Days</p>
+                <p>Resubscription is allowed</p>
+            </div>
+            <div class="price">Rs 340</div>
+            <a href="#" class="buy-now" onclick="showModal('No.3, Social All in One Plus', 340)">BUY NOW</a>
+        </div>
+        
+           <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <h3>Offer Activation <span id="offer-name" style="color: blue;"></span> - Rs <span id="offer-price"></span></h3>
+                        <input type="text" id="phone-number" placeholder="Enter 11-digit number">
+                        <div class="modal-buttons">
+                            <button class="cancel" onclick="closeModal()">CANCEL</button>
+                            <button class="pay-now" onclick="redirectToWhatsApp()">PAY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        function showTL2() {
+            document.body.innerHTML = `
+                <div class="header">
+                    <i class="fas fa-arrow-left back-icon" onclick="showTELENOR2()"></i>
+                    <div class="title">PAKAGES BY SAQIB</div>
+                </div>
+                <div class="container" id="main-content">
+                    <div class="card">
+           
+         <div class="card">    
+           <h3>1. Weekly Ultra - 8GB</h3>
+        
+            <div class="details">
+                <p>Validity 7 Days</p>
+                <p>Internet: 8GBs</p>
+                <p>All Network Mins: 100</p>
+    
+                <div class="price">Rs 280</div>   
+         <a href="#" class="buy-now" onclick="showModal('Weekly Ultra - 8GB', 280)">BUY NOW</a>
+        </div>
+    </div>
+
+   </div>
+<div class="card">
+    <h3>2. Ultra Plus-50GB</h3>
+    
+    <div class="details">
+        <p>Validity 30 Days</p>
+        <p>25 GBs</p>
+        <p>25 GBs (1AM- 11AM)</p>
+        <p>Validity 30 Days</p>
+    </div>
+    <div class="price">Rs 870</div>
+  <a href="#" class="buy-now" onclick="showModal('Ultra Plus-50GB', 870)">BUY NOW</a>
+        </div>
+   </div>
+          <div class="card">
+            <h3>3. 6 to 6 Offer</h3>
+        
+            <div class="details">
+               <div class="validity">Validity 1 Day</div>
+            <p>Telenor brings you the best-in-class 4G with faster speed and a crazy amount of data to keep you going for hours.</p>
+            <p>Validity 1 Day</p>
+            <p>Internet 2000 MB (6AM - 6PM)</p>
+            <p>Free Daily Gamebox Subscription</p>
+               <div class="price">Rs 20</div>
+         <a href="#" class="buy-now" onclick="showModal('Internet 2000 MB (6AM - 6PM)', 20)">BUY NOW</a>
+        </div>
+   </div>
+            
+              <div class="card">
+            <div class="details">
+                <h3>4. Monthly Messaging Bundle</h3>
+                <p>Validity 30 Days</p>
+                <p>Telenor SMS: 10,000<br>WhatsApp/Facebook MBs: 1000<br>Validity 30 Days</p>
+            </div>
+            <div class="price">Rs 70</div>
+       <a href="#" class="buy-now" onclick="showModal('Monthly Messaging Bundle', 70)">BUY NOW</a>
+        </div>
+          
+           </div>
+            
+           
+        
+        
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <h3>Offer Activation <span id="offer-name" style="color: blue;"></span> - Rs <span id="offer-price"></span></h3>
+                        <input type="text" id="phone-number" placeholder="Enter 11-digit number">
+                        <div class="modal-buttons">
+                            <button class="cancel" onclick="closeModal()">CANCEL</button>
+                            <button class="pay-now" onclick="redirectToWhatsApp()">PAY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    
+    function showTL4() {
+            document.body.innerHTML = `
+                <div class="header">
+                    <i class="fas fa-arrow-left back-icon" onclick="showTELENOR2()"></i>
+                    <div class="title">PAKAGES BY SAQIB</div>
+                </div>
+                <div class="container" id="main-content">
+                    <div class="card">
+        <h3>1. Weekly Special offer - 10GB</h3>
+        
+            <div class="details">
+                <p>Validity 7 Days</p>
+                <p>Internet: 10GBs</p>
+                <p>All Network Mins: 125</p>
+                <p>TELENOR mints: 2500</p>
+                <p>Sms   1500</p>
+                <p>Validity: 7 Days</p>
+                <div class="price">Rs 230</div>   
+         <a href="#" class="buy-now" onclick="showModal('No.1,Weakly Special offer   - 10GB', 230)">BUY NOW</a>
+        </div>
+   </div>
+</div>
+           <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <h3>Offer Activation <span id="offer-name" style="color: blue;"></span> - Rs <span id="offer-price"></span></h3>
+                        <input type="text" id="phone-number" placeholder="Enter 11-digit number">
+                        <div class="modal-buttons">
+                            <button class="cancel" onclick="closeModal()">CANCEL</button>
+                            <button class="pay-now" onclick="redirectToWhatsApp()">PAY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    function showZG4() {
+            document.body.innerHTML = `
+                <div class="header">
+                    <i class="fas fa-arrow-left back-icon" onclick="showZong2()"></i>
+                    <div class="title">PAKAGES BY SAQIB</div>
+                </div>
+                <div class="container" id="main-content">
+        <div class="card">
+    
+<h3>1. MONTHLY My5 - 200GB</h3>
+        <img src="https://i.ibb.co/ZHvLQX2/Screenshot-2024-12-26-10-09-22-802-pk-com-telenor-phoenix-edit.jpg" alt="profile-picture-2"width="420" height="172">
+        <div>
+            <div class="details">
+                <p>Validity 30 Days</p>
+                <p>Internet: 200GBs</p>
+                <p>All Network Mins: 2000</p>
+                <p>Zong mints: 20000</p>
+                <p>Sms   20000</p>
+                
+                <div class="price">Rs 4100</div>   
+         <a href="#" class="buy-now" onclick="showModal('No.1, Monthly my5 - 200GB', 4100)">BUY NOW</a>
+        </div>
+   </div>
+</div>
+           <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <h3>Offer Activation <span id="offer-name" style="color: blue;"></span> - Rs <span id="offer-price"></span></h3>
+                        <input type="text" id="phone-number" placeholder="Enter 11-digit number">
+                        <div class="modal-buttons">
+                            <button class="cancel" onclick="closeModal()">CANCEL</button>
+                            <button class="pay-now" onclick="redirectToWhatsApp()">PAY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
